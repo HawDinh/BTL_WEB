@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Chi tiết bài viết - PETMART</title>
+    <link rel="stylesheet" href="Chi tiết bài viết.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <a href="" class="logo">
+                <img src="Image/logo1.png" alt="">
+            </a>
+            <div id="menu">
+                <div class="item">
+                    <button>
+                        <a href="Trangchu2.html">Trang chủ</a>
+                    </button>                     
+                </div>
+                <div class="item">
+                    <button>
+                        <a href="Dịch vụ.html">Dịch vụ</a>
+                    </button>
+                </div>
+                <div class="item">
+                    <button>
+                        <a href="Lịch khám.html">Đặt lịch</a>
+                    </button>
+                </div>
+                <div class="item">
+                    <button>
+                        <a href="Bài viết.html">Bài viết</a>
+                    </button>
+                </div>  
+            </div>
+
+            <div id="actions">
+                <img src="Image/user.png" alt="" class="item" id="user-info">
+                <div class="user-menu">
+                    <ul>
+                        <li><a href="Thông tin tài khoản.html"><i class="fas fa-user-circle"></i> Thông tin người dùng</a></li>
+                        <li><a href="Thú cưng.html"><i class="fas fa-paw"></i> Quản lý thú cưng</a></li>
+                        <li><a href="Theo dõi lịch hẹn.html"><i class="fas fa-calendar-check"></i> Theo dõi lịch hẹn</a></li>
+                        <li><a href="#" id="logout-button"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a></li>
+                    </ul>
+                </div>
+                <span id="username-display" style="display: none;"></span>
+            </div>
+        </div>
+
+        <div id="banner">
+            <div class="box-left">
+                <h2>
+                    <span>DỊCH VỤ</span>
+                    <br>
+                    <span>TỐT NHẤT</span>
+                </h2>
+                <p>Chuyên cung cấp các dịch vụ tốt nhất cho các "bé yêu" của bạn, đảm bảo chất lượng dịch vụ xứng đáng 5 sao</p>
+                <button>
+                    <a href="Lịch khám.html">Đặt lịch ngay</a>
+                </button>
+            </div>
+            <div class="box-right">
+                <img src="Image/Ảnh 2.jpg" alt="">
+                <img src="Image/Ảnh 2.jpg" alt="">
+                <img src="Image/Ảnh 2.jpg" alt="">
+            </div>
+            <div class="to-bottom">
+                <a href="">
+                    <img src="Image/to_bottom.png" alt="">
+                </a>
+            </div>
+        </div>
+
+        <section id="article-detail">
+            <div class="article-container">
+                <div class="article-header">
+                    <h1 class="article-title"></h1>
+                    <div class="article-meta">
+                        <span class="author"></span>
+                        <span class="date"></span>
+                    </div>
+                </div>
+                <div class="article-content">
+                    <p class="content"></p>
+                </div>
+            </div>
+
+            <div class="comments-section">
+                <h2>Bình luận</h2>
+                <div class="comment-form">
+                    <textarea placeholder="Viết bình luận của bạn..." class="input-comment"></textarea>
+                    <button class="post-comment">Gửi bình luận</button>
+                </div>
+
+                <div class="comments-list">
+                    <div class="comment-count">
+                        <strong>Các bình luận</strong>
+                    </div>
+                    
+                    <div class="comment">
+                        <div class="comment-header">
+                            <img src="Image/user.png" alt="Avatar" class="avatar">
+                            <div class="comment-info">
+                                <span class="name">Trịnh Lê X B</span>
+                                <span class="date">2024-11-29</span>
+                            </div>
+                        </div>
+                        <div class="comment-text">
+                            Đây là bình luận đầu tiên của tôi!
+                        </div>
+                    </div>
+
+                    <div class="comment">
+                        <div class="comment-header">
+                            <img src="Image/user.png" alt="Avatar" class="avatar">
+                            <div class="comment-info">
+                                <span class="name">Huy T</span>
+                                <span class="date">2024-11-28</span>
+                            </div>
+                        </div>
+                        <div class="comment-text">
+                            Đây là một bình luận khác, với một số nội dung chia sẻ.
+                        </div>
+                    </div>
+
+                    <div class="comment">
+                        <div class="comment-header">
+                            <img src="Image/user.png" alt="Avatar" class="avatar">
+                            <div class="comment-info">
+                                <span class="name">Ngô T V</span>
+                                <span class="date">2024-11-27</span>
+                            </div>
+                        </div>
+                        <div class="comment-text">
+                            Cảm ơn bạn đã chia sẻ thông tin hữu ích này!
+                        </div>
+                    </div>
+
+                    <button class="load-more">Xem thêm bình luận</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="footer">
+            <div class="box">
+                <div class="logo">
+                    <img src="Image/logo1.png" alt="">
+                </div>
+                <p>Cung cấp sản phẩm với chất lượng an toàn cho quý khách</p>
+                <p>Hotline: 0.xxxxxxxxxxx</p>
+            </div>
+            <div class="box">
+                <h3>NỘI DUNG</h3>
+                <ul class="quick-menu">
+                    <div class="item">
+                        <a href="">Trang chủ</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Dịch vụ</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Đặt lịch</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Bài viết</a>
+                    </div>
+                </ul>
+            </div>
+            <div class="box">
+                <h3>LIÊN HỆ</h3>
+                <form class="contact-form">
+                    <input type="text" placeholder="Địa chỉ email">
+                    <button class="subscribe-btn">Nhận tin</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="Chi tiết bài viết.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    <script>
+        // Xử lý menu người dùng
+        const userIcon = document.querySelector('#actions .item');
+        const userMenu = document.querySelector('.user-menu');
+        
+        // Mở menu khi click vào icon
+        userIcon.addEventListener('click', (e) => {
+            e.stopPropagation();
+            userMenu.classList.toggle('active');
+        });
+        
+        // Đóng menu khi click ra ngoài
+        document.addEventListener('click', (e) => {
+            if (!userMenu.contains(e.target) && e.target !== userIcon) {
+                userMenu.classList.remove('active');
+            }
+        });
+        
+        // Ngăn menu đóng khi click vào menu
+        userMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+        
+        // Xử lý đăng xuất
+        document.getElementById("logout-button").addEventListener("click", function(e) {
+            e.preventDefault();
+            localStorage.removeItem('token');
+            localStorage.removeItem('username');
+            alert("Đã đăng xuất thành công!");
+            window.location.href = "Đăng nhập.html";
+        });
+    </script>
+</body>
+</html>

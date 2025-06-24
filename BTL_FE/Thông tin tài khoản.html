@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <title>PETMART - Thông tin tài khoản</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" type="text/css" href="Thông tin tài khoản.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <a href="" class="logo">
+                    <img src="Image/logo1.png" alt="">
+                </a>
+                <div id="menu">
+                    <div class="item">
+                        <button>
+                            <a href="Trangchu2.html">Trang chủ</a>
+                        </button>                     
+                    </div>
+                    <div class="item">
+                        <button>
+                            <a href="Dịch vụ.html">Dịch vụ</a>
+                        </button>
+                    </div>
+                    <div class="item">
+                        <button>
+                            <a href="Lịch khám.html">Đặt lịch</a>
+                        </button>
+                    </div>
+                    <div class="item">
+                        <button>
+                            <a href="Bài viết.html">Bài viết</a>
+                        </button>
+                    </div>  
+                </div>
+                <div id="actions">
+                    <img src="Image/user.png" alt="" class="item" id="user-info">
+                    <div class="user-menu">
+                        <ul>
+                            <li><a href="Thông tin tài khoản.html"><i class="fas fa-user-circle"></i> Thông tin người dùng</a></li>
+                            <li><a href="Thú cưng.html"><i class="fas fa-paw"></i> Quản lý thú cưng</a></li>
+                            <li><a href="Theo dõi lịch hẹn.html"><i class="fas fa-calendar-check"></i> Theo dõi lịch hẹn</a></li>
+                            <li><a href="#" id="logout-button"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a></li>
+                        </ul>
+                    </div>
+                    <span id="username-display" style="display: none;"></span>
+                </div>
+            </div>
+
+            <div class="profile-container">
+                <div class="profile-header">
+                    <h1>Thông tin tài khoản</h1>
+                    <p>Quản lý thông tin cá nhân của bạn</p>
+                </div>
+
+                <div class="profile-content">
+                    <div class="profile-sidebar">
+                        <div class="profile-avatar">
+                            <img src="Image/user.png" alt="Avatar">
+                            <button class="change-avatar-btn"><i class="fas fa-camera"></i> Thay đổi ảnh</button>
+                        </div>
+                        <div class="profile-menu">
+                            <ul>
+                                <li class="active"><i class="fas fa-user"></i> Thông tin cá nhân</li>
+                                <li><i class="fas fa-key"></i> Đổi mật khẩu</li>
+                                <li><a href="Thú cưng.html"><i class="fas fa-paw"></i> Thú cưng của tôi</a></li>
+                                <li><i class="fas fa-bell"></i> Thông báo</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="profile-details">
+                        <form class="profile-form">
+                            <div class="form-group">
+                                <label>Họ và tên</label>
+                                <input type="text" value="Nguyễn Văn A" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" value="nguyenvana@gmail.com" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Số điện thoại</label>
+                                <input type="tel" value="0123456789" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Địa chỉ</label>
+                                <textarea class="form-control">Số 123, Đường ABC, Quận XYZ, Thành phố Hà Nội</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Ngày sinh</label>
+                                <input type="date" value="1990-01-01" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Giới tính</label>
+                                <select class="form-control">
+                                    <option value="male">Nam</option>
+                                    <option value="female">Nữ</option>
+                                    <option value="other">Khác</option>
+                                </select>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="save-btn"><i class="fas fa-save"></i> Lưu thay đổi</button>
+                                <button type="reset" class="cancel-btn"><i class="fas fa-times"></i> Hủy</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <footer id="footer">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <a href="" class="logo">
+                            <img src="Image/logo1.png" alt="">
+                        </a>
+                        <p>Cung cấp sản phẩm với chất lượng an toàn cho quý khách</p>
+                        <p>Hotline: 0.xxxxxxxxxxx</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Liên Kết Nhanh</h3>
+                        <ul class="quick-links">
+                            <li><a href="Trangchu2.html">Trang chủ</a></li>
+                            <li><a href="Dịch vụ.html">Dịch vụ</a></li>
+                            <li><a href="Lịch khám.html">Đặt lịch</a></li>
+                            <li><a href="Bài viết.html">Bài viết</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Đăng Ký Nhận Tin</h3>
+                        <p>Nhận thông tin ưu đãi và dịch vụ mới nhất</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Nhập email của bạn">
+                            <button type="submit">Đăng ký</button>
+                        </form>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 PetMart. Tất cả quyền được bảo lưu.</p>
+                </div>
+            </footer>
+        </div>
+        <script src="Thông tin tài khoản.js"></script>
+        <script>
+            // Xử lý menu người dùng
+            const userIcon = document.querySelector('#actions .item');
+            const userMenu = document.querySelector('.user-menu');
+            
+            // Mở menu khi click vào icon
+            userIcon.addEventListener('click', (e) => {
+                e.stopPropagation();
+                userMenu.classList.toggle('active');
+            });
+            
+            // Đóng menu khi click ra ngoài
+            document.addEventListener('click', (e) => {
+                if (!userMenu.contains(e.target) && e.target !== userIcon) {
+                    userMenu.classList.remove('active');
+                }
+            });
+            
+            // Ngăn menu đóng khi click vào menu
+            userMenu.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+
+            // Lấy thông tin người dùng khi trang được tải
+            document.addEventListener('DOMContentLoaded', function() {
+                loadUserInfo();
+
+                // Xử lý sự kiện khi nhấn nút Lưu thay đổi
+                document.querySelector('.save-btn').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    saveUserInfo();
+                });
+            });
+
+            // Hàm lấy thông tin người dùng từ API
+            function loadUserInfo() {
+                // Lấy token từ localStorage
+                const token = localStorage.getItem('token');
+                if (!token) {
+                    alert('Bạn cần đăng nhập để xem thông tin tài khoản');
+                    window.location.href = 'Đăng nhập.html';
+                    return;
+                }
+                
+                // Gọi API để lấy thông tin người dùng
+                fetch('http://localhost:8080/users/myInfo', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.status === 401 || response.status === 403) {
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('currentUserId');
+                        alert('Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.');
+                        window.location.href = 'Đăng nhập.html';
+                        throw new Error('Phiên đăng nhập hết hạn');
+                    }
+                    if (!response.ok) {
+                        throw new Error('Không thể lấy thông tin người dùng');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Thông tin người dùng:', data);
+                    // Hiển thị thông tin người dùng lên form
+                    if (data && data.result) {
+                        const user = data.result;
+                        document.querySelector('input[type="text"]').value = user.username || '';
+                        document.querySelector('input[type="email"]').value = user.email || '';
+                        document.querySelector('input[type="tel"]').value = user.phoneNumber || '';
+                        document.querySelector('textarea').value = user.address || '';
+                        
+                        if (user.dateOfBirth) {
+                            document.querySelector('input[type="date"]').value = user.dateOfBirth.substring(0, 10);
+                        }
+                        
+                        const genderSelect = document.querySelector('select');
+                        const options = genderSelect.options;
+                        
+                        for (let i = 0; i < options.length; i++) {
+                            if (options[i].value.toLowerCase() === (user.gender || '').toLowerCase()) {
+                                genderSelect.selectedIndex = i;
+                                break;
+                            }
+                        }
+                        
+                        // Lưu ID người dùng để sử dụng khi cập nhật
+                        localStorage.setItem('currentUserId', user.id);
+                    }
+                })
+                .catch(error => {
+                    console.error('Lỗi khi lấy thông tin người dùng:', error);
+                    if (error.message !== 'Phiên đăng nhập hết hạn') {
+                        alert('Có lỗi xảy ra khi tải thông tin người dùng');
+                    }
+                });
+            }
+
+            // Hàm lưu thông tin người dùng
+            function saveUserInfo() {
+                // Lấy token và ID người dùng từ localStorage
+                const token = localStorage.getItem('token');
+                const userId = localStorage.getItem('currentUserId');
+                
+                if (!token || !userId) {
+                    alert('Phiên đăng nhập hết hạn. Vui lòng đăng nhập lại.');
+                    window.location.href = 'Đăng nhập.html';
+                    return;
+                }
+
+                // Lấy dữ liệu từ form
+                const username = document.querySelector('input[type="text"]').value;
+                const email = document.querySelector('input[type="email"]').value;
+                const phone = document.querySelector('input[type="tel"]').value;
+                const address = document.querySelector('textarea').value;
+                const dateOfBirth = document.querySelector('input[type="date"]').value;
+                const gender = document.querySelector('select').value;
+                
+                // Tạo object dữ liệu để gửi lên server
+                const userData = {
+                    phoneNumber: phone,
+                    gender: gender,
+                    email: email,
+                    address: address,
+                    // Giữ lại password cũ (cần thiết vì backend yêu cầu trường này)
+                    password: "password123"
+                };
+                
+                // Thêm dateOfBirth nếu có giá trị
+                if (dateOfBirth) {
+                    userData.dateOfBirth = dateOfBirth;
+                }
+
+                console.log('Dữ liệu gửi đi:', userData);
+
+                // Hiển thị trạng thái đang lưu
+                const saveBtn = document.querySelector('.save-btn');
+                const originalText = saveBtn.innerHTML;
+                saveBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang lưu...';
+                saveBtn.disabled = true;
+
+                // Gọi API để cập nhật thông tin người dùng
+                fetch(`http://localhost:8080/users/${userId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(userData)
+                })
+                .then(response => {
+                    if (response.status === 401 || response.status === 403) {
+                        // Token hết hạn
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('currentUserId');
+                        alert('Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.');
+                        window.location.href = 'Đăng nhập.html';
+                        throw new Error('Phiên đăng nhập hết hạn');
+                    }
+                    if (!response.ok) {
+                        return response.json().then(err => {
+                            console.error('Lỗi từ server:', err);
+                            throw new Error(err.message || 'Không thể cập nhật thông tin người dùng');
+                        });
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Cập nhật thành công:', data);
+                    alert('Cập nhật thông tin thành công!');
+                    // Tải lại thông tin người dùng sau khi cập nhật
+                    loadUserInfo();
+                })
+                .catch(error => {
+                    console.error('Lỗi khi cập nhật thông tin người dùng:', error);
+                    if (error.message !== 'Phiên đăng nhập hết hạn') {
+                        alert('Có lỗi xảy ra khi cập nhật thông tin: ' + error.message);
+                    }
+                })
+                .finally(() => {
+                    // Khôi phục nút lưu
+                    saveBtn.innerHTML = originalText;
+                    saveBtn.disabled = false;
+                });
+            }
+
+            // Xử lý đăng xuất
+            document.getElementById("logout-button").addEventListener("click", function(e) {
+                e.preventDefault();
+                localStorage.removeItem('token');
+                localStorage.removeItem('username');
+                localStorage.removeItem('currentUserId');
+                alert("Đã đăng xuất thành công!");
+                window.location.href = "Đăng nhập.html";
+            });
+        </script>
+    </body>
+</html>

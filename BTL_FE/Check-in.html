@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Check-in.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Trang Check-in Lễ Tân</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <h1>
+                <i class="fas fa-paw"></i>
+                Quản Lý Check-in
+                <i class="fas fa-paw"></i>
+            </h1>
+            <p class="subtitle">Kiểm tra và quản lý lịch đặt hẹn</p>
+        </div>
+
+        <!-- Tìm kiếm -->
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search" placeholder="Tìm kiếm theo tên pet hoặc khách hàng..." onkeyup="filterTable()">
+            </div>
+        </div>
+
+        <!-- Thống kê -->
+        <div class="stats-container">
+            <div class="stat-box">
+                <i class="fas fa-calendar-check"></i>
+                <div class="stat-info">
+                    <h3>Lịch hẹn hôm nay</h3>
+                    <p id="todayCount">0</p>
+                </div>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-check-circle"></i>
+                <div class="stat-info">
+                    <h3>Đã check-in</h3>
+                    <p id="checkedInCount">0</p>
+                </div>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-clock"></i>
+                <div class="stat-info">
+                    <h3>Đang chờ</h3>
+                    <p id="waitingCount">0</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bảng danh sách lịch -->
+        <div class="table-container">
+            <table id="bookingTable">
+                <thead>
+                    <tr>
+                        <th><i class="fas fa-dog"></i> Tên Pet</th>
+                        <th><i class="fas fa-user"></i> Tên Khách Hàng</th>
+                        <th><i class="fas fa-calendar-alt"></i> Thời Gian</th>
+                        <th><i class="fas fa-info-circle"></i> Dịch Vụ</th>
+                        <th><i class="fas fa-clipboard-check"></i> Trạng Thái</th>
+                        <th><i class="fas fa-tasks"></i> Thao Tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dữ liệu sẽ được thêm bởi JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Loading spinner -->
+        <div id="loading" class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Đang tải dữ liệu...</p>
+        </div>
+    </div>
+
+    <script src="Check-in.js"></script>
+</body>
+</html>

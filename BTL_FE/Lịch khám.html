@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>PETMART - Đăng ký lịch khám</title>
+        <link rel="stylesheet" type="text/css" href="Lịch khám.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <a href="" class="logo">
+                    <img src="Image/logo1.png" alt="">
+                </a>
+                <div id="menu">
+                    <div class="item">
+                        <button>
+                            <a href="Trangchu2.html">Trang chủ</a>
+                        </button>                     
+                    </div>
+                    <div class="item">
+                        <button>
+                            <a href="Dịch vụ.html">Dịch vụ</a>
+                        </button>
+                    </div>
+                    <div class="item">
+                        <button>
+                            <a href="Lịch khám.html">Đặt lịch</a>
+                        </button>
+                    </div>
+                    <div class="item">
+                        <button>
+                            <a href="Bài viết.html">Bài viết</a>
+                        </button>
+                    </div>  
+                </div>
+
+                <div id="actions">
+                    <img src="Image/user.png" alt="" class="item" id="user-info">
+                    <div class="user-menu">
+                        <ul>
+                            <li><a href="Thông tin tài khoản.html"><i class="fas fa-user-circle"></i> Thông tin người dùng</a></li>
+                            <li><a href="Thú cưng.html"><i class="fas fa-paw"></i> Quản lý thú cưng</a></li>
+                            <li><a href="Theo dõi lịch hẹn.html"><i class="fas fa-calendar-check"></i> Theo dõi lịch hẹn</a></li>
+                            <li><a href="#" id="logout-button"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a></li>
+                        </ul>
+                    </div>
+                    <span id="username-display" style="display: none;"></span>
+                </div>
+            </div>
+
+            <!-- Thêm thanh thông báo xác thực -->
+            <div id="auth-alert" class="auth-alert">
+                <i class="fas fa-exclamation-circle"></i>
+                <span id="auth-message">Đang kiểm tra phiên đăng nhập...</span>
+                <button id="close-alert"><i class="fas fa-times"></i></button>
+            </div>
+
+            <section id="appointment-section">
+                <div class="section-title">
+                    <h2>Đặt Lịch Khám</h2>
+                    <p>Đăng ký lịch khám cho thú cưng của bạn</p>
+                </div>
+                
+                <div class="appointment-container">
+                    <div class="appointment-card">
+                        <div class="appointment-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        
+                        <div class="appointment-form-container">
+                            <form id="appointment-form" class="appointment-form">
+                                <div class="form-group">
+                                    <label for="username"><i class="fas fa-user"></i> Tên đăng nhập</label>
+                                    <input type="text" id="username" name="username" placeholder="Username/Email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="petName"><i class="fas fa-paw"></i> Tên thú cưng</label>
+                                    <input type="text" id="petName" name="petName" placeholder="Tên thú cưng" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="petAge"><i class="fas fa-birthday-cake"></i> Tuổi thú cưng</label>
+                                    <input type="number" id="petAge" name="petAge" placeholder="Tuổi thú cưng" required>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group half">
+                                        <label for="appointmentDate"><i class="fas fa-calendar-alt"></i> Ngày khám</label>
+                                        <input type="date" id="appointmentDate" name="appointmentDate" placeholder="Chọn ngày..." required>
+                                    </div>
+                                    
+                                    <div class="form-group half">
+                                        <label for="appointmentTime"><i class="fas fa-clock"></i> Giờ khám</label>
+                                        <input type="time" id="appointmentTime" name="appointmentTime" placeholder="Chọn thời gian..." required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="doctor"><i class="fas fa-user-md"></i> Bác sĩ khám</label>
+                                    <select id="doctor" name="doctor">
+                <option value="Null">Không ưu tiên</option>
+                                        <option value="Nguyễn Văn A">Bác sĩ Nguyễn Văn A - Nội khoa thú y</option>
+                                        <option value="Trần Thị B">Bác sĩ Trần Thị B - Phẫu thuật thú y</option>
+                                        <option value="Lê Văn C">Bác sĩ Lê Văn C - Da liễu thú y</option>
+            </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="note"><i class="fas fa-sticky-note"></i> Lưu ý</label>
+                                    <textarea id="note" name="note" placeholder="Ghi chú về tình trạng thú cưng, dịch vụ cần sử dụng..."></textarea>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" id="registerButton" class="btn-primary">Đăng ký lịch khám</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="appointment-info">
+                        <div class="info-card">
+                            <h3><i class="fas fa-info-circle"></i> Thông tin đặt lịch</h3>
+                            <ul>
+                                <li>Vui lòng đến trước giờ hẹn 15 phút</li>
+                                <li>Mang theo sổ tiêm chủng (nếu có)</li>
+                                <li>Chuẩn bị thông tin về tình trạng sức khỏe của thú cưng</li>
+                                <li>Có thể thay đổi lịch hẹn trước 24 giờ</li>
+                            </ul>
+                            <button id="test-connection" class="btn-test-connection">
+                                <i class="fas fa-sync-alt"></i> Kiểm tra kết nối
+                            </button>
+                            <div id="connection-status" class="connection-status"></div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <h3><i class="fas fa-phone-alt"></i> Liên hệ hỗ trợ</h3>
+                            <p><i class="fas fa-phone"></i> Hotline: 0.xxxxxxxxxxx</p>
+                            <p><i class="fas fa-envelope"></i> Email: support@petmart.com</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Địa chỉ: 123 Đường ABC, Quận XYZ, Hà Nội</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer id="footer">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <a href="" class="logo">
+                            <img src="Image/logo1.png" alt="">
+                        </a>
+                        <p>Cung cấp sản phẩm với chất lượng an toàn cho quý khách</p>
+                        <p>Hotline: 0.xxxxxxxxxxx</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Liên Kết Nhanh</h3>
+                        <ul class="quick-links">
+                            <li><a href="Trangchu2.html">Trang chủ</a></li>
+                            <li><a href="Dịch vụ.html">Dịch vụ</a></li>
+                            <li><a href="Lịch khám.html">Đặt lịch</a></li>
+                            <li><a href="Bài viết.html">Bài viết</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Đăng Ký Nhận Tin</h3>
+                        <p>Nhận thông tin ưu đãi và dịch vụ mới nhất</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Nhập email của bạn">
+                            <button type="submit">Đăng ký</button>
+                        </form>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 PetMart. Tất cả quyền được bảo lưu.</p>
+                </div>
+            </footer>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script>
+            // Xử lý menu người dùng
+            const userIcon = document.querySelector('#actions .item');
+            const userMenu = document.querySelector('.user-menu');
+            
+            // Mở menu khi click vào icon
+            userIcon.addEventListener('click', (e) => {
+                e.stopPropagation();
+                userMenu.classList.toggle('active');
+            });
+            
+            // Đóng menu khi click ra ngoài
+            document.addEventListener('click', (e) => {
+                if (!userMenu.contains(e.target) && e.target !== userIcon) {
+                    userMenu.classList.remove('active');
+                }
+            });
+            
+            // Ngăn menu đóng khi click vào menu
+            userMenu.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        
+            // Sử dụng flatpickr cho input date và time
+            flatpickr("#appointmentDate", {
+                dateFormat: "Y-m-d", // Định dạng ngày tháng
+                minDate: "today"
+            });
+
+            flatpickr("#appointmentTime", {
+                enableTime: true,  // Bật tính năng chọn giờ
+                noCalendar: true,  // Tắt lịch
+                dateFormat: "H:i", // Định dạng giờ
+                minTime: "08:00",
+                maxTime: "18:00"
+            });
+            
+            // Xử lý đóng thông báo xác thực
+            document.getElementById("close-alert").addEventListener("click", function() {
+                document.getElementById("auth-alert").style.display = "none";
+            });
+            
+            // Thêm xử lý đăng xuất
+            document.getElementById("logout-button").addEventListener("click", function(e) {
+                e.preventDefault();
+                localStorage.removeItem('token');
+                localStorage.removeItem('username');
+                alert("Đã đăng xuất thành công!");
+                window.location.href = "Đăng nhập.html";
+            });
+        </script>
+
+        <script src="Lịch khám.js"></script>
+    </body>
+</html>

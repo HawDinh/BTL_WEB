@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: rgb(252, 238, 238);
+    line-height: 1.6;
+}
+
+#wrapper {
+    width: 100%;
+    height: 100vh;
+}
+
+#header {
+    width: 100%;
+    padding: 0px 30px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#header .logo {
+    display: flex;
+    align-items: center;
+}
+
+#header .logo img {
+    height: 80px;
+    width: auto;
+    margin-right: 20px;
+}
+
+#menu {
+    list-style: none;
+    display: flex;
+}
+
+#menu .item {
+    margin: 0px 25px;
+}
+
+#menu .item a {
+    color: rgb(248, 128, 192);
+    text-decoration: none;
+}
+
+#menu .item button {
+    width: 90px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: rgb(251, 220, 220);
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 1px solid rgb(248, 128, 192);
+}
+
+#actions {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px;
+}
+
+#actions .item {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#actions:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+}
+
+/* Thêm padding để tạo không gian cho mouse di chuyển từ icon xuống menu */
+#actions::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 15px;
+}
+
+.user-menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.2s, opacity 0.2s;
+}
+
+.user-menu.active, #actions:hover .user-menu {
+    visibility: visible;
+    opacity: 1;
+}
+
+.user-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.user-menu ul li {
+    padding: 8px 20px;
+    transition: background-color 0.3s;
+}
+
+.user-menu ul li:hover {
+    background-color: #f5f5f5;
+}
+
+.user-menu ul li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+/* Profile Container Styles */
+.profile-container {
+    padding: 40px 120px;
+    background: #f9f9f9;
+    min-height: calc(100vh - 110px);
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.profile-header h1 {
+    color: #333;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.profile-header p {
+    color: #666;
+    font-size: 16px;
+}
+
+.profile-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 40px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Sidebar Styles */
+.profile-sidebar {
+    background: #f8f9fa;
+    padding: 30px;
+    border-right: 1px solid #eee;
+}
+
+.profile-avatar {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-avatar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 5px solid #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.change-avatar-btn {
+    background: rgb(248, 128, 192);
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.change-avatar-btn i {
+    margin-right: 5px;
+}
+
+.profile-menu ul {
+    list-style: none;
+}
+
+.profile-menu ul li {
+    padding: 15px;
+    margin: 5px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.profile-menu ul li i {
+    margin-right: 10px;
+    color: rgb(248, 128, 192);
+}
+
+.profile-menu ul li.active {
+    background: rgb(248, 128, 192);
+    color: #fff;
+}
+
+.profile-menu ul li.active i {
+    color: #fff;
+}
+
+.profile-menu ul li:hover:not(.active) {
+    background: #eee;
+}
+
+/* Profile Details Styles */
+.profile-details {
+    padding: 30px;
+}
+
+.profile-form {
+    max-width: 600px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: rgb(248, 128, 192);
+}
+
+textarea.form-control {
+    height: 100px;
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.save-btn, .cancel-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.save-btn i, .cancel-btn i {
+    margin-right: 8px;
+}
+
+.save-btn {
+    background: rgb(248, 128, 192);
+    color: #fff;
+}
+
+.save-btn:hover {
+    background: rgb(228, 108, 172);
+}
+
+.cancel-btn {
+    background: #eee;
+    color: #666;
+}
+
+.cancel-btn:hover {
+    background: #ddd;
+}
+
+/* Footer Styles */
+#footer {
+    background: #f8f9fa;
+    padding: 40px 120px;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.footer-section h3 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.footer-section p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.footer-section .logo img {
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.quick-links {
+    list-style: none;
+}
+
+.quick-links li {
+    margin-bottom: 10px;
+}
+
+.quick-links li a {
+    color: #666;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.quick-links li a:hover {
+    color: rgb(248, 128, 192);
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.newsletter-form button {
+    background: rgb(248, 128, 192);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: #666;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: rgb(248, 128, 192);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    color: #666;
+}
+
+

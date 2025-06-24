@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <title>PETMART - Quản lý thú cưng</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" type="text/css" href="Thú cưng.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <a href="" class="logo">
+                    <img src="Image/logo1.png" alt="">
+                </a>
+                <div id="menu">
+                    <div class="item">
+                        <button>
+                            <a href="Trangchu2.html">Trang chủ</a>
+                        </button>                     
+                    </div>
+                    <div class="item">
+                        <button>
+                            <a href="Dịch vụ.html">Dịch vụ</a>
+                        </button>
+                    </div>
+                    <div class="item">
+                        <button>
+                            <a href="Lịch khám.html">Đặt lịch</a>
+                        </button>
+                    </div>
+                    <div class="item">
+                        <button>
+                            <a href="Bài viết.html">Bài viết</a>
+                        </button>
+                    </div>  
+                </div>
+
+                <div id="actions">
+                    <img src="Image/user.png" alt="" class="item" id="user-info">
+                    <div class="user-menu">
+                        <ul>
+                            <li><a href="Thông tin tài khoản.html"><i class="fas fa-user-circle"></i> Thông tin người dùng</a></li>
+                            <li><a href="Thú cưng.html"><i class="fas fa-paw"></i> Quản lý thú cưng</a></li>
+                            <li><a href="Theo dõi lịch hẹn.html"><i class="fas fa-calendar-check"></i> Theo dõi lịch hẹn</a></li>
+                            <li><a href="#" id="logout-button"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a></li>
+                        </ul>
+                    </div>
+                    <span id="username-display" style="display: none;"></span>
+                </div>
+            </div>
+
+            <section id="pet-management">
+                <div class="section-title">
+                    <h2>Quản Lý Thú Cưng</h2>
+                    <p>Thông tin về các bé cưng của bạn</p>
+                </div>
+                
+                <div class="pet-container">
+                    <div class="pet-list" id="pet-container">
+                        <div class="loading-spinner">Đang tải thông tin thú cưng...</div>
+                    </div>
+
+                    <div class="pet-form-container">
+                        <form id="pet-form" class="pet-form">
+                            <h2>Thêm Thú Cưng</h2>
+                            <input type="hidden" id="pet-id">
+                            
+                            <div class="form-group">
+                                <label for="name">Tên thú cưng:</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="species">Loài:</label>
+                                <select id="species" name="species" required>
+                                    <option value="">-- Chọn loài --</option>
+                                    <option value="Chó">Chó</option>
+                                    <option value="Mèo">Mèo</option>
+                                    <option value="Chim">Chim</option>
+                                    <option value="Cá">Cá</option>
+                                    <option value="Khác">Khác</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="breed">Giống:</label>
+                                <input type="text" id="breed" name="breed">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="color">Màu sắc:</label>
+                                <input type="text" id="color" name="color">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="birthDate">Ngày sinh:</label>
+                                <input type="date" id="birthDate" name="birthDate">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="gender">Giới tính:</label>
+                                <select id="gender" name="gender">
+                                    <option value="">-- Chọn giới tính --</option>
+                                    <option value="Đực">Đực</option>
+                                    <option value="Cái">Cái</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="description">Mô tả:</label>
+                                <textarea id="description" name="description" rows="4"></textarea>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" id="save-pet">Lưu Thú Cưng</button>
+                                <button type="button" id="cancel-edit">Hủy</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <footer id="footer">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <a href="" class="logo">
+                            <img src="Image/logo1.png" alt="">
+                        </a>
+                        <p>Cung cấp sản phẩm với chất lượng an toàn cho quý khách</p>
+                        <p>Hotline: 0.xxxxxxxxxxx</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Liên Kết Nhanh</h3>
+                        <ul class="quick-links">
+                            <li><a href="Trangchu2.html">Trang chủ</a></li>
+                            <li><a href="Dịch vụ.html">Dịch vụ</a></li>
+                            <li><a href="Lịch khám.html">Đặt lịch</a></li>
+                            <li><a href="Bài viết.html">Bài viết</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Đăng Ký Nhận Tin</h3>
+                        <p>Nhận thông tin ưu đãi và dịch vụ mới nhất</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Nhập email của bạn">
+                            <button type="submit">Đăng ký</button>
+                        </form>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 PetMart. Tất cả quyền được bảo lưu.</p>
+                </div>
+            </footer>
+        </div>
+        
+        <script src="Trangchu2.js"></script>
+        <script src="Thú cưng.js"></script>
+        <script>
+            // Xử lý menu người dùng
+            const userIcon = document.querySelector('#actions .item');
+            const userMenu = document.querySelector('.user-menu');
+            
+            // Mở menu khi click vào icon
+            userIcon.addEventListener('click', (e) => {
+                e.stopPropagation();
+                userMenu.classList.toggle('active');
+            });
+            
+            // Đóng menu khi click ra ngoài
+            document.addEventListener('click', (e) => {
+                if (!userMenu.contains(e.target) && e.target !== userIcon) {
+                    userMenu.classList.remove('active');
+                }
+            });
+            
+            // Ngăn menu đóng khi click vào menu
+            userMenu.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+            
+            // Xử lý đăng xuất
+            document.getElementById("logout-button").addEventListener("click", function(e) {
+                e.preventDefault();
+                localStorage.removeItem('token');
+                localStorage.removeItem('username');
+                alert("Đã đăng xuất thành công!");
+                window.location.href = "Đăng nhập.html";
+            });
+        </script>
+    </body>
+</html> 

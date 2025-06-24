@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <title>PETMART - Trang Quản Trị</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="Admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="admin-wrapper">
+        <div id="sidebar">
+            <div class="logo">
+                <img src="Image/logo1.png" alt="Logo">
+                <h2>Admin Panel</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active" data-tab="dashboard">
+                        <a href="#"><i class="fas fa-tachometer-alt"></i> Tổng Quan</a>
+                    </li>
+                    <li data-tab="pets">
+                        <a href="#"><i class="fas fa-paw"></i> Quản Lý Thú Cưng</a>
+                    </li>
+                    <li data-tab="services">
+                        <a href="#"><i class="fas fa-concierge-bell"></i> Quản Lý Dịch Vụ</a>
+                    </li>
+                    <li data-tab="appointments">
+                        <a href="#"><i class="fas fa-calendar-check"></i> Quản Lý Lịch Hẹn</a>
+                    </li>
+                    <li data-tab="articles">
+                        <a href="#"><i class="fas fa-newspaper"></i> Quản Lý Bài Viết</a>
+                    </li>
+                    <li data-tab="users">
+                        <a href="#"><i class="fas fa-users"></i> Quản Lý Người Dùng</a>
+                    </li>
+                    <li id="logout-button">
+                        <a href="#"><i class="fas fa-sign-out-alt"></i> Đăng Xuất</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="main-content">
+            <div id="header">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="admin-search-input" placeholder="Tìm kiếm...">
+                    <button id="admin-search-btn" class="btn-search" type="button"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="admin-info">
+                    <span id="admin-name">Admin</span>
+                    <img src="Image/user.png" alt="Admin">
+                </div>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <!-- Dashboard Tab -->
+                <div id="dashboard" class="tab-pane active">
+                    <div class="dashboard-header">
+                        <h2>Tổng Quan Hệ Thống</h2>
+                    </div>
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <div class="stat-icon pets">
+                                <i class="fas fa-paw"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Thú Cưng</h3>
+                                <p id="total-pets">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon services">
+                                <i class="fas fa-concierge-bell"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Dịch Vụ</h3>
+                                <p id="total-services">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon articles">
+                                <i class="fas fa-newspaper"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Bài Viết</h3>
+                                <p id="total-articles">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon users">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Người Dùng</h3>
+                                <p id="total-users">0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pets Tab -->
+                <div id="pets" class="tab-pane">
+                    <div class="content-header">
+                        <h2>Quản Lý Thú Cưng</h2>
+                        <button id="add-pet" class="btn-add"><i class="fas fa-plus"></i> Thêm Thú Cưng</button>
+                    </div>
+                    <div class="data-container">
+                        <table id="pets-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Tên</th>
+                                    <th>Loại</th>
+                                    <th>Giống</th>
+                                    <th>Giới Tính</th>
+                                    <th>Chủ Sở Hữu</th>
+                                    <th>Thao Tác</th>
+                                </tr>
+                            </thead>
+                            <tbody id="pets-table-body">
+                                <!-- Pet data will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Services Tab -->
+                <div id="services" class="tab-pane">
+                    <div class="content-header">
+                        <h2>Quản Lý Dịch Vụ</h2>
+                        <button id="add-service" class="btn-add"><i class="fas fa-plus"></i> Thêm Dịch Vụ</button>
+                    </div>
+                    <div class="data-container">
+                        <table id="services-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Tên Dịch Vụ</th>
+                                    <th>Mô Tả</th>
+                                    <th>Giá</th>
+                                    <th>Thời Gian</th>
+                                    <th>Thao Tác</th>
+                                </tr>
+                            </thead>
+                            <tbody id="services-table-body">
+                                <!-- Service data will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Appointments Tab -->
+                <div id="appointments" class="tab-pane">
+                    <div class="content-header">
+                        <h2>Quản Lý Lịch Hẹn</h2>
+                        <div class="filter-container">
+                            <div class="filter-group">
+                                <label for="appointment-status-filter">Trạng thái:</label>
+                                <select id="appointment-status-filter">
+                                    <option value="">Tất cả</option>
+                                    <option value="Scheduled">Đã lên lịch</option>
+                                    <option value="Checked In">Đã check-in</option>
+                                    <option value="In Progress">Đang khám</option>
+                                    <option value="Completed">Đã hoàn thành</option>
+                                    <option value="Cancelled">Đã hủy</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label for="appointment-date-filter">Ngày:</label>
+                                <input type="date" id="appointment-date-filter">
+                                <button id="clear-date-filter" class="btn-filter"><i class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+                        <button id="add-appointment" class="btn-add"><i class="fas fa-plus"></i> Thêm Lịch Hẹn</button>
+                    </div>
+                    <div class="data-container">
+                        <table id="appointments-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Khách hàng</th>
+                                    <th>Thú cưng</th>
+                                    <th>Ngày hẹn</th>
+                                    <th>Giờ hẹn</th>
+                                    <th>Bác sĩ</th>
+                                    <th>Trạng thái</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody id="appointments-table-body">
+                                <!-- Appointment data will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Articles Tab -->
+                <div id="articles" class="tab-pane">
+                    <div class="content-header">
+                        <h2>Quản Lý Bài Viết</h2>
+                        <button id="add-article" class="btn-add"><i class="fas fa-plus"></i> Thêm Bài Viết</button>
+                    </div>
+                    <div class="data-container">
+                        <table id="articles-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Tiêu Đề</th>
+                                    <th>Tác Giả</th>
+                                    <th>Ngày Đăng</th>
+                                    <th>Thao Tác</th>
+                                </tr>
+                            </thead>
+                            <tbody id="articles-table-body">
+                                <!-- Article data will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Users Tab -->
+                <div id="users" class="tab-pane">
+                    <div class="content-header">
+                        <h2>Quản Lý Người Dùng</h2>
+                        <button id="add-user" class="btn-add"><i class="fas fa-plus"></i> Thêm Người Dùng</button>
+                    </div>
+                    <div class="data-container">
+                        <table id="users-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Tên Đăng Nhập</th>
+                                    <th>Email</th>
+                                    <th>Họ Tên</th>
+                                    <th>Ngày Sinh</th>
+                                    <th>Số Điện Thoại</th>
+                                    <th>Địa Chỉ</th>
+                                    <th>Giới Tính</th>
+                                    <th>Thao Tác</th>
+                                </tr>
+                            </thead>
+                            <tbody id="users-table-body">
+                                <!-- User data will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pet Modal -->
+    <div id="pet-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="pet-modal-title">Thêm Thú Cưng</h2>
+            <form id="pet-form">
+                <input type="hidden" id="pet-id">
+                <div class="form-group">
+                    <label for="pet-name">Tên Thú Cưng</label>
+                    <input type="text" id="pet-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="pet-species">Loại</label>
+                    <input type="text" id="pet-species" required>
+                </div>
+                <div class="form-group">
+                    <label for="pet-breed">Giống</label>
+                    <input type="text" id="pet-breed" required>
+                </div>
+                <div class="form-group">
+                    <label for="pet-gender">Giới Tính</label>
+                    <select id="pet-gender" required>
+                        <option value="Male">Đực</option>
+                        <option value="Female">Cái</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pet-owner">Chủ Sở Hữu</label>
+                    <input type="text" id="pet-owner" placeholder="Nhập username chủ sở hữu" required>
+                </div>
+                <div class="form-group">
+                    <label for="pet-birthday">Ngày Sinh</label>
+                    <input type="date" id="pet-birthday">
+                </div>
+                <div class="form-group">
+                    <label for="pet-description">Mô Tả</label>
+                    <textarea id="pet-description"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-save">Lưu</button>
+                    <button type="button" class="btn-cancel">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Service Modal -->
+    <div id="service-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="service-modal-title">Thêm Dịch Vụ</h2>
+            <form id="service-form">
+                <input type="hidden" id="service-id">
+                <div class="form-group">
+                    <label for="service-name">Tên Dịch Vụ</label>
+                    <input type="text" id="service-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="service-description">Mô Tả</label>
+                    <textarea id="service-description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="service-price">Giá (VND)</label>
+                    <input type="number" id="service-price" required>
+                </div>
+                <div class="form-group">
+                    <label for="service-duration">Thời Gian (phút)</label>
+                    <input type="number" id="service-duration" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-save">Lưu</button>
+                    <button type="button" class="btn-cancel">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Article Modal -->
+    <div id="article-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="article-modal-title">Thêm Bài Viết</h2>
+            <form id="article-form">
+                <input type="hidden" id="article-id">
+                <div class="form-group">
+                    <label for="article-title">Tiêu Đề</label>
+                    <input type="text" id="article-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="article-image">Ảnh</label>
+                    <input type="text" id="article-image" placeholder="URL ảnh">
+                </div>
+                <div class="form-group">
+                    <label for="article-content">Nội Dung</label>
+                    <textarea id="article-content" required rows="10"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-save">Lưu</button>
+                    <button type="button" class="btn-cancel">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- User Modal -->
+    <div id="user-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="user-modal-title">Thêm Người Dùng</h2>
+            <form id="user-form">
+                <input type="hidden" id="user-id">
+                <div class="form-group">
+                    <label for="user-username">Tên Đăng Nhập</label>
+                    <input type="text" id="user-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-email">Email</label>
+                    <input type="email" id="user-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-fullname">Họ Tên</label>
+                    <input type="text" id="user-fullname">
+                </div>
+                <div class="form-group">
+                    <label for="user-dob">Ngày Sinh</label>
+                    <input type="date" id="user-dob">
+                </div>
+                <div class="form-group">
+                    <label for="user-phone">Số Điện Thoại</label>
+                    <input type="text" id="user-phone">
+                </div>
+                <div class="form-group">
+                    <label for="user-address">Địa Chỉ</label>
+                    <input type="text" id="user-address">
+                </div>
+                <div class="form-group">
+                    <label for="user-gender">Giới Tính</label>
+                    <select id="user-gender">
+                        <option value="Male">Nam</option>
+                        <option value="Female">Nữ</option>
+                        <option value="Other">Khác</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-save">Lưu</button>
+                    <button type="button" class="btn-cancel">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Confirm Delete Modal -->
+    <div id="delete-modal" class="modal">
+        <div class="modal-content delete-modal-content">
+            <h2>Xác Nhận Xóa</h2>
+            <p>Bạn có chắc chắn muốn xóa mục này?</p>
+            <div class="form-actions">
+                <button id="confirm-delete" class="btn-delete">Xóa</button>
+                <button id="cancel-delete" class="btn-cancel">Hủy</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Appointment Modal -->
+    <div id="appointment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="appointment-modal-title">Thêm Lịch Hẹn</h2>
+            <form id="appointment-form">
+                <input type="hidden" id="appointment-id">
+                <div class="form-group">
+                    <label for="appointment-owner">Khách hàng</label>
+                    <input type="text" id="appointment-owner" required placeholder="Nhập tên khách hàng">
+                </div>
+                <div class="form-group">
+                    <label for="appointment-pet">Thú cưng</label>
+                    <select id="appointment-pet" required>
+                        <option value="">Chọn thú cưng</option>
+                        <!-- Options will be loaded here -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-datetime">Ngày và giờ hẹn</label>
+                    <input type="datetime-local" id="appointment-datetime" required>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-doctor">Bác sĩ phụ trách</label>
+                    <select id="appointment-doctor">
+                        <option value="">Chưa chỉ định</option>
+                        <!-- Options will be loaded here -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-preferred-doctor">Bác sĩ ưu tiên</label>
+                    <select id="appointment-preferred-doctor">
+                        <option value="">Không có</option>
+                        <!-- Options will be loaded here -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-status">Trạng thái</label>
+                    <select id="appointment-status" required>
+                        <option value="Scheduled">Đã lên lịch</option>
+                        <option value="Checked In">Đã check-in</option>
+                        <option value="In Progress">Đang khám</option>
+                        <option value="Completed">Đã hoàn thành</option>
+                        <option value="Cancelled">Đã hủy</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-notes">Ghi chú</label>
+                    <textarea id="appointment-notes"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-save">Lưu</button>
+                    <button type="button" class="btn-cancel">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="Admin.js"></script>
+</body>
+</html> 

@@ -1,0 +1,209 @@
+body {
+    background-image: url("Image/Background6.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    font-family: Tomoto;
+}
+
+/* Header và Container */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: rgb(251, 230, 230);
+    border: 1px solid grey;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+    color: rgb(248, 128, 192);
+    margin: 0 0 30px 0;
+    font-size: 32px;
+}
+
+/* Center Container cho các nút */
+.center-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.button-container {
+    display: flex;
+    gap: 30px;
+}
+
+/* Search Section */
+.search-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.search-section h2 {
+    color: rgb(248, 128, 192);
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+/* Search Container */
+.search-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#search-pet {
+    padding: 15px 20px;
+    width: 400px;
+    font-size: 16px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#search-pet:focus {
+    border-color: rgb(248, 128, 192);
+    outline: none;
+}
+
+#search-btn {
+    padding: 15px 30px;
+    background-color: rgb(237, 155, 209);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#search-btn:hover {
+    background-color: rgb(237, 26, 174);
+}
+
+/* Buttons Container */
+.action-button {
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(237, 155, 209);
+    color: white;
+    min-width: 150px;
+}
+
+.action-button:hover {
+    background-color: rgb(237, 26, 174);
+}
+
+/* Table Styles */
+#doctor-table {
+    width: 100%;
+    background-color: rgb(251, 230, 230);
+    border: 1px solid grey;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+#doctor-table thead {
+    background-color: rgb(251, 230, 230);
+}
+
+#doctor-table th {
+    padding: 15px;
+    font-weight: bold;
+    color: rgb(248, 128, 192);
+    font-size: 14px;
+    border-bottom: 1px solid rgb(245, 195, 195);
+    text-align: left;
+}
+
+#doctor-table td {
+    padding: 15px;
+    border-bottom: 1px solid rgb(245, 195, 195);
+    color: #333;
+    font-size: 14px;
+}
+
+#doctor-table tbody tr:hover {
+    background-color: rgba(248, 128, 192, 0.1);
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+}
+
+.status-available {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+}
+
+.status-busy {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+}
+
+/* Detail Button */
+.detail-button {
+    padding: 8px 16px;
+    background-color: rgb(237, 155, 209);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.detail-button:hover {
+    background-color: rgb(237, 26, 174);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .header {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    #search-pet {
+        width: 100%;
+    }
+    
+    .button-container {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    #doctor-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .action-button {
+        width: 100%;
+    }
+}
+
+

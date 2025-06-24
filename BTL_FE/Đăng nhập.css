@@ -1,0 +1,75 @@
+body{
+    background-image: url("Image/Background6.jpg"); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 100vh; 
+    margin: 0;
+    opacity: 0,7;
+    font-family: Tomoto;
+}
+
+.login{
+    width: 350px;
+    height: 350px;
+    background-color: rgb(251,230,230);
+    border: 1px solid grey;
+    border-radius: 10px;
+    text-align: center;
+    margin: 180px auto;
+}
+.login h2{
+    display: inline-block;
+    color: rgb(248, 128, 192);
+}
+.login input{
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding-left: 20px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.check-box input{
+    width: 12px;
+    height: 12px;
+}
+
+.login button{
+    width: 250px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: rgb(237, 155, 209);
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+p{
+    display: inline-block;
+    float: left;
+    padding-left: 40px;
+    margin: 0;
+}
+.check-box{
+    float: left;
+    padding-left: 40px;
+}
+.login a{
+    float: right;
+    padding-right: 40px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.login_button:hover {
+    background-color: rgb(237, 26, 174);
+    color: white;
+}
+.login_button:active{
+    opacity: 0.7;
+}

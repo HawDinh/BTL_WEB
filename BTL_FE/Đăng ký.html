@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Đăng ký</title>
+    <link rel="stylesheet" type="text/css" href="Đăng ký.css">
+</head>
+<body>
+    <div class="login">
+        <h2>
+            ĐĂNG KÝ
+        </h2>
+        <form id="registerForm" onsubmit="return handleRegister(event)">
+        <p>
+            Tên đăng nhập
+        </p>
+            <input type="text" name="username" placeholder="Username/Email" required>
+        <p>
+            Số điện thoại
+        </p>
+            <input type="tel" name="phone" placeholder="Number phone" required>
+        <p>
+            Giới tính :
+        </p>
+        <div class="gender-checkbox">
+                <input type="radio" name="gender" value="male" required>
+            Nam
+        </div>
+        <div class="gender-checkbox">
+                <input type="radio" name="gender" value="female" required>
+            Nữ
+        </div>
+        <div class="password-field">
+            <p>
+                Mật khẩu
+            </p>
+                <input type="password" name="password" placeholder="Enter password" required>
+            <p>
+                Nhập lại mật khẩu
+            </p>
+                <input type="password" name="confirmPassword" placeholder="Enter password" required>
+        </div>
+        <a href="#">
+            Điều khoản sử dụng dịch vụ & quyền lợi khách hàng
+        </a>
+        <div class="agree-checkbox">
+                <input type="checkbox" name="agree" required>
+            Tôi đồng ý
+        </div>
+            <button type="submit" class="login_button">
+            Đăng ký
+        </button>
+        </form>
+    </div>
+
+    <script>
+        async function handleRegister(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            // Kiểm tra mật khẩu khớp nhau
+            if (formData.get('password') !== formData.get('confirmPassword')) {
+                alert('Mật khẩu không khớp!');
+                return false;
+            }
+
+            try {
+                const response = await fetch('http://localhost:8080/users', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        username: formData.get('username'),
+                        phone: formData.get('phone'),
+                        gender: formData.get('gender'),
+                        password: formData.get('password')
+                    })
+                });
+
+                const data = await response.json();
+                
+                if (response.ok) {
+                    alert('Đăng ký thành công!');
+                    window.location.href = 'Đăng nhập.html';
+                } else {
+                    alert(data.message || 'Đăng ký thất bại!');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Có lỗi xảy ra, vui lòng thử lại!');
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>

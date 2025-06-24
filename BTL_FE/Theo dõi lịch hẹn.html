@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Theo Dõi Lịch Hẹn - PETMART</title>
+    <link rel="stylesheet" href="Theo dõi lịch hẹn.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <a href="" class="logo">
+                <img src="Image/logo1.png" alt="">
+            </a>
+            <div id="menu">
+                <div class="item">
+                    <button>
+                        <a href="Trangchu2.html">Trang chủ</a>
+                    </button>                     
+                </div>
+                <div class="item">
+                    <button>
+                        <a href="Dịch vụ.html">Dịch vụ</a>
+                    </button>
+                </div>
+                <div class="item">
+                    <button>
+                        <a href="Lịch khám.html">Đặt lịch</a>
+                    </button>
+                </div>
+                <div class="item">
+                    <button>
+                        <a href="Bài viết.html">Bài viết</a>
+                    </button>
+                </div>  
+            </div>
+
+            <div id="actions">
+                <img src="Image/user.png" alt="" class="item" id="user-info">
+                <div class="user-menu">
+                    <ul>
+                        <li><a href="Thông tin tài khoản.html"><i class="fas fa-user-circle"></i> Thông tin người dùng</a></li>
+                        <li><a href="Thú cưng.html"><i class="fas fa-paw"></i> Quản lý thú cưng</a></li>
+                        <li><a href="Theo dõi lịch hẹn.html"><i class="fas fa-calendar-check"></i> Theo dõi lịch hẹn</a></li>
+                        <li><a href="#" id="logout-button"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a></li>
+                    </ul>
+                </div>
+                <span id="username-display" style="display: none;"></span>
+            </div>
+        </div>
+        
+        <!-- Thêm thanh thông báo xác thực -->
+        <div id="auth-alert" class="auth-alert">
+            <i class="fas fa-exclamation-circle"></i>
+            <span id="auth-message">Đang kiểm tra phiên đăng nhập...</span>
+            <button id="close-alert"><i class="fas fa-times"></i></button>
+        </div>
+
+        <section id="appointments-section">
+            <h1><i class="fas fa-calendar-alt"></i> Theo Dõi Lịch Hẹn</h1>
+            
+            <div class="appointments-filter">
+                <div class="filter-group">
+                    <label for="status-filter"><i class="fas fa-filter"></i> Lọc theo trạng thái:</label>
+                    <select id="status-filter">
+                        <option value="all">Tất cả</option>
+                        <option value="Scheduled">Đã lên lịch</option>
+                        <option value="Checked In">Đã check-in</option>
+                        <option value="In Progress">Đang khám</option>
+                        <option value="Completed">Đã hoàn thành</option>
+                        <option value="Cancelled">Đã hủy</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="date-filter"><i class="fas fa-calendar-day"></i> Lọc theo ngày:</label>
+                    <input type="date" id="date-filter">
+                    <button id="clear-date-filter" class="btn-clear"><i class="fas fa-times"></i> Xóa</button>
+                </div>
+                
+                <div class="filter-group search-group">
+                    <label for="pet-search"><i class="fas fa-search"></i> Tìm kiếm thú cưng:</label>
+                    <input type="text" id="pet-search" placeholder="Nhập tên thú cưng...">
+                </div>
+            </div>
+            
+            <div class="appointments-container">
+                <div id="appointments-list">
+                    <div class="loading-spinner">
+                        <i class="fas fa-circle-notch fa-spin"></i> Đang tải lịch hẹn...
+                    </div>
+                </div>
+                
+                <div class="appointment-stats">
+                    <div class="stats-card">
+                        <h3><i class="fas fa-clipboard-list"></i> Thống kê lịch hẹn</h3>
+                        <ul>
+                            <li><i class="fas fa-calendar"></i> Tổng số lịch hẹn: <span id="total-count">0</span></li>
+                            <li><i class="fas fa-clock"></i> Đang chờ: <span id="scheduled-count">0</span></li>
+                            <li><i class="fas fa-check-circle"></i> Đã hoàn thành: <span id="completed-count">0</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3><i class="fas fa-info-circle"></i> Thông tin hữu ích</h3>
+                        <p><i class="fas fa-check"></i> Vui lòng đến đúng giờ để được phục vụ tốt nhất</p>
+                        <p><i class="fas fa-clock"></i> Bạn có thể hủy lịch hẹn trước 24 giờ</p>
+                        <p><i class="fas fa-phone-alt"></i> Hotline hỗ trợ: 0.xxxxxxxxxxx</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="appointment-detail-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h2><i class="fas fa-file-medical"></i> Chi tiết lịch hẹn</h2>
+                    <div id="appointment-detail-content">
+                        <!-- Nội dung chi tiết lịch hẹn sẽ được thêm bằng JavaScript -->
+                    </div>
+                    <div class="modal-actions">
+                        <button id="cancel-appointment" class="btn-cancel"><i class="fas fa-times"></i> Hủy lịch hẹn</button>
+                        <button id="close-detail" class="btn-secondary"><i class="fas fa-undo"></i> Quay lại</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="" class="logo">
+                        <img src="Image/logo1.png" alt="">
+                    </a>
+                    <p>Cung cấp sản phẩm với chất lượng an toàn cho quý khách</p>
+                    <p>Hotline: 0.xxxxxxxxxxx</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên Kết Nhanh</h3>
+                    <ul class="quick-links">
+                        <li><a href="Trangchu2.html">Trang chủ</a></li>
+                        <li><a href="Dịch vụ.html">Dịch vụ</a></li>
+                        <li><a href="Lịch khám.html">Đặt lịch</a></li>
+                        <li><a href="Bài viết.html">Bài viết</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Đăng Ký Nhận Tin</h3>
+                    <p>Nhận thông tin ưu đãi và dịch vụ mới nhất</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Nhập email của bạn">
+                        <button type="submit">Đăng ký</button>
+                    </form>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PetMart. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="Theo dõi lịch hẹn.js"></script>
+    <script>
+        // Xử lý menu người dùng
+        const userIcon = document.querySelector('#user-info');
+        const userMenu = document.querySelector('.user-menu');
+        
+        // Mở menu khi click vào icon
+        userIcon.addEventListener('click', (e) => {
+            e.stopPropagation();
+            userMenu.classList.toggle('active');
+        });
+        
+        // Đóng menu khi click ra ngoài
+        document.addEventListener('click', (e) => {
+            if (!userMenu.contains(e.target) && e.target !== userIcon) {
+                userMenu.classList.remove('active');
+            }
+        });
+        
+        // Ngăn menu đóng khi click vào menu
+        userMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+        
+        // Xử lý đăng xuất
+        document.getElementById("logout-button").addEventListener("click", function(e) {
+            e.preventDefault();
+            localStorage.removeItem('token');
+            localStorage.removeItem('username');
+            alert("Đã đăng xuất thành công!");
+            window.location.href = "Đăng nhập.html";
+        });
+        
+        // Xử lý đóng thông báo xác thực
+        document.getElementById("close-alert").addEventListener("click", function() {
+            document.getElementById("auth-alert").style.display = "none";
+        });
+    </script>
+</body>
+</html> 
